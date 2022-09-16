@@ -76,21 +76,6 @@ void insert(struct Node** head, int data, int index)
     }
 }
 
-void print_list(struct Node* node)
-{
-    // Traverse till the last node
-    while (node != NULL)
-    {
-        // Print the data in the current node
-        printf("%d", node->data);
-        // Jump to the next node
-        if (node->next != NULL)
-            printf(" -> ");
-        node = node->next;
-    }
-    printf(" -> NULL\n");
-}
-
 void delete(struct Node** head, int pos)
 {
     int i = 1;
@@ -114,6 +99,57 @@ void delete(struct Node** head, int pos)
         prev->next = itr->next;
         free(itr);
     }
+}
+
+void deleteNode(struct Node** head, int val) {
+    struct Node* itr = (*head);
+    struct Node* prev = (*head);
+    // Check if the linked list is empty or not
+    if (itr == NULL) {
+        printf("The Linked List is empty!");
+        return;
+    }
+    // Check is the value in the first element in the linked list or not
+    if ((itr != NULL) && (itr->data == val)) {
+        // Make the second node as head
+        (*head) = itr->next;
+        // Delete the element using free memory
+        free(itr);
+        return;
+    }
+    // Travese till find the node that has the value
+    while ((itr != NULL) && (itr->data != val)) {
+        prev = itr;
+        itr = itr->next;
+    }
+    // Check if travese all node and not found the element
+    if (itr == NULL) {
+        printf("The element %d is not found in the linked list!!", val);
+        return;
+    }
+    // Check if we found the searching element
+    if (itr->data == val) {
+        // Unlink the node from the linked list
+        prev->next = itr->next;
+        // Remove the node by using the free memory
+        free(itr);
+        return;
+    }
+}
+
+void print_list(struct Node* node)
+{
+    // Traverse till the last node
+    while (node != NULL)
+    {
+        // Print the data in the current node
+        printf("%d", node->data);
+        // Jump to the next node
+        if (node->next != NULL)
+            printf(" -> ");
+        node = node->next;
+    }
+    printf(" -> NULL\n");
 }
 
 int main() {
