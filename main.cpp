@@ -1,3 +1,10 @@
+/*
+ * File         : main.cpp
+ * Description  : "Source file for Data Structure main file using C++ language"
+ * Auther       : Ahmed Sheaira
+ * Version      : 1.0
+ */
+
 #include "Array/include/array.hpp"
 
 int main() {

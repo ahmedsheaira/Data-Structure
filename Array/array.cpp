@@ -1,3 +1,10 @@
+/*
+ * File         : array.cpp
+ * Description  : "Source file for Array Abtract Data Structure using C++ language"
+ * Auther       : Ahmed Sheaira
+ * Version      : 1.0
+ */
+
 #include "include/array.hpp"
 
 Array::Array(int arrsize) {

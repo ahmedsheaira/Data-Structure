@@ -1,3 +1,13 @@
+/*
+ * File         : array.hpp
+ * Description  : "Header file for Array Abstract Data Structure using C++ language"
+ * Auther       : Ahmed Sheaira
+ * Version      : 1.0
+ */
+
+#ifndef ARRAY_HPP_
+#define ARRAY_HPP_
+
 #pragma once
 #include <iostream>
 
@@ -18,3 +28,5 @@ public:
     int get_length_arr();
     void display_arr();
 };
+
+#endif
