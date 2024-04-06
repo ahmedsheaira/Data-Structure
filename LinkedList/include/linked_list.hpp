@@ -1,3 +1,13 @@
+/*
+ * File         : linked_list.hpp
+ * Description  : "Header file for Linked List Data Structure using C++ language"
+ * Auther       : Ahmed Sheaira
+ * Version      : 1.0
+ */
+
+#ifndef LINKED_LIST_HPP_
+#define LINKED_LIST_HPP_
+
 #pragma once
 #include <iostream>
 #include <string>
@@ -23,3 +33,5 @@ public:
     int get_length_sll();
     void display_sll();
 };
+
+#endif

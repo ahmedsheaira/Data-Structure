@@ -1,3 +1,10 @@
+/*
+ * File         : linked_list.cpp
+ * Description  : "Source file for Linked List Data Structure using C++ language"
+ * Auther       : Ahmed Sheaira
+ * Version      : 1.0
+ */
+
 #include "include/linked_list.hpp"
 
 SingleLinkedList::SingleLinkedList() {

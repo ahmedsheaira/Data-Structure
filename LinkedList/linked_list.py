@@ -82,3 +82,31 @@ class SingleLinkedList:
             itr = itr.next
 
         print(f"The Single Linked List: {sllstr}")
+
+
+if __name__ == '__main__':
+    print("This is Single Linked List demo!!\n")
+    sll = SingleLinkedList()
+    sll.append_sll(4)
+    sll.display_sll()
+    print(f"The length of the Single Linked List is {sll.get_length_sll()}\n")
+    sll.push_sll(10)
+    sll.push_sll(20)
+    sll.display_sll()
+    print(f"The length of the Single Linked List is {sll.get_length_sll()}\n")
+    sll.append_sll(43)
+    sll.append_sll(28)
+    sll.display_sll()
+    print(f"The length of the Single Linked List is {sll.get_length_sll()}\n")
+    sll.insert_sll(6, 3)
+    sll.display_sll()
+    print(f"The length of the Single Linked List is {sll.get_length_sll()}\n")
+    sll.remove_sll(3)
+    sll.display_sll()
+    print(f"The length of the Single Linked List is {sll.get_length_sll()}\n")
+    sll.insert_sll(16, 5)
+    sll.display_sll()
+    print(f"The length of the Single Linked List is {sll.get_length_sll()}\n")
+    sll.remove_sll(4)
+    sll.display_sll()
+    print(f"The length of the Single Linked List is {sll.get_length_sll()}\n")
