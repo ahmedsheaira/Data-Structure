@@ -1,3 +1,10 @@
+/*
+ * File         : array.hpp
+ * Description  : "Header file for Array Abstract Data Structure using C++ language"
+ * Auther       : Ahmed Sheaira
+ * Version      : 1.0
+ */
+
 #pragma once
 #include <iostream>
 
