@@ -1,3 +1,10 @@
+/*
+ * File         : stack.hpp
+ * Description  : "Header file for Stack Data Structure based on Single Linked List using C++ language"
+ * Auther       : Ahmed Sheaira
+ * Version      : 1.0
+ */
+
 #pragma once
 #include <iostream>
 #include <string>

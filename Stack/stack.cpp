@@ -1,3 +1,10 @@
+/*
+ * File         : stack.cpp
+ * Description  : "Source file for Stack Data Structure based on Single Linked List using C++ language"
+ * Auther       : Ahmed Sheaira
+ * Version      : 1.0
+ */
+
 #include "include/stack.hpp"
 
 Stack::Stack() {

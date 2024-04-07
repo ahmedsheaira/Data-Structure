@@ -42,3 +42,30 @@ class Stack:
             itr = itr.next
 
         print(f"The Stack: {sstr}")
+
+
+if __name__ == '__main__':
+    print("This is Stack based Linked List Data Structure demo!!\n")
+    s = Stack()
+    s.push_stack(14)
+    s.push_stack(4)
+    s.display_stack()
+    print(f"The top element of the stack is {s.peek_stack()}")
+    print(f"The length of the Stack is {s.get_length_stack()}\n")
+    s.push_stack(25)
+    s.push_stack(40)
+    s.display_stack()
+    print(f"The top element of the stack is {s.peek_stack()}")
+    print(f"The length of the Stack is {s.get_length_stack()}\n")
+    s.pop_stack()
+    s.display_stack()
+    print(f"The top element of the stack is {s.peek_stack()}")
+    print(f"The length of the Stack is {s.get_length_stack()}\n")
+    s.pop_stack()
+    s.display_stack()
+    print(f"The top element of the stack is {s.peek_stack()}")
+    print(f"The length of the Stack is {s.get_length_stack()}\n")
+    s.pop_stack()
+    s.display_stack()
+    print(f"The top element of the stack is {s.peek_stack()}")
+    print(f"The length of the Stack is {s.get_length_stack()}\n")
