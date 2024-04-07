@@ -8,6 +8,7 @@
 #include "Array/include/array.hpp"
 #include "LinkedList/include/linked_list.hpp"
 #include "Queue/include/queue.hpp"
+#include "Stack/include/stack.hpp"
 
 int main() {
     cout << "This is Array ADT demo!!" << endl;
@@ -93,6 +94,31 @@ int main() {
     q.display_queue();
     cout << "The length of the Queue: " << q.get_length_queue() << endl;
     cout << "The head of the Queue: " << q.peek_queue() << endl;
+
+    cout << "This is Stack based on Linked List demo!!" << endl;
+    Stack s;
+    s.push_stack(14);
+    s.push_stack(4);
+    s.display_stack();
+    cout << "The top element of the stack: " << s.peek_stack() << endl;
+    cout << "The Length of the Stack: " << s.get_length_stack() << endl;
+    s.push_stack(25);
+    s.push_stack(40);
+    s.display_stack();
+    cout << "The top element of the stack: " << s.peek_stack() << endl;
+    cout << "The Length of the Stack: " << s.get_length_stack() << endl;
+    s.pop_stack();
+    s.display_stack();
+    cout << "The top element of the stack: " << s.peek_stack() << endl;
+    cout << "The Length of the Stack: " << s.get_length_stack() << endl;
+    s.pop_stack();
+    s.display_stack();
+    cout << "The Length of the Stack: " << s.get_length_stack() << endl;
+    cout << "The top element of the stack: " << s.peek_stack() << endl;
+    s.pop_stack();
+    s.display_stack();
+    cout << "The Length of the Stack: " << s.get_length_stack() << endl;
+    cout << "The top element of the stack: " << s.peek_stack() << endl;
 
     return 0;
 }
