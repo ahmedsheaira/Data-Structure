@@ -2,9 +2,9 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-            "label": "Custom Build",
+            "label": "Custom Build for C++",
             "type": "shell",
-            "command": "${workspaceFolder}/build.sh",
+            "command": "${workspaceFolder}/build_cpp.sh",
             "group": {
                 "kind": "build",
                 "isDefault": true
