@@ -1,3 +1,10 @@
+/*
+ * File         : queue.cpp
+ * Description  : "Source file for Queue Data Structure based on Single Linked List using C++ language"
+ * Auther       : Ahmed Sheaira
+ * Version      : 1.0
+ */
+
 #include "include/queue.hpp"
 
 Queue::Queue() {

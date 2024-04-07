@@ -45,3 +45,24 @@ class Queue:
             itr = itr.next
 
         print(f"The Queue: {qstr}")
+
+
+if __name__ == '__main__':
+    print("This is the Queue Data Structure based on Linked List demo!!\n")
+    q = Queue()
+    q.enqueue(10)
+    q.display_queue()
+    print(f"The length of the Queue is {q.get_length_queue()}")
+    print(f"The head of the Queue: {q.peek_queue()}\n")
+    q.enqueue(30)
+    q.display_queue()
+    print(f"The length of the Queue is {q.get_length_queue()}")
+    print(f"The head of the Queue: {q.peek_queue()}\n")
+    q.enqueue(3)
+    q.display_queue()
+    print(f"The length of the Queue is {q.get_length_queue()}")
+    print(f"The head of the Queue: {q.peek_queue()}\n")
+    q.dequeue()
+    q.display_queue()
+    print(f"The length of the Queue is {q.get_length_queue()}")
+    print(f"The head of the Queue: {q.peek_queue()}\n")
