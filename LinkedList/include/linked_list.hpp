@@ -22,7 +22,7 @@ public:
 
 class SingleLinkedList {
 private:
-    NodeSLL* head;
+    NodeSLL* headsll;
 
 public:
     SingleLinkedList();
@@ -32,6 +32,28 @@ public:
     void remove_sll(int index);
     int get_length_sll();
     void display_sll();
+};
+
+class NodeDLL {
+public:
+    int data;
+    NodeDLL* next;
+    NodeDLL* prev;
+};
+
+class DoublyLinkedList {
+private:
+    NodeDLL* headdll;
+
+public:
+    DoublyLinkedList();
+    void push_dll(int data);
+    void append_dll(int data);
+    void insert_dll(int data, int index);
+    void remove_dll(int index);
+    int get_length_dll();
+    void display_dll();
+    void display_rev_dll();
 };
 
 #endif

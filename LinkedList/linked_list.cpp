@@ -7,26 +7,24 @@
 
 #include "include/linked_list.hpp"
 
-SingleLinkedList::SingleLinkedList() {
-    head = NULL;
-}
+SingleLinkedList::SingleLinkedList() : headsll{NULL} {}
 
 void SingleLinkedList::push_sll(int data) {
     NodeSLL* node = new NodeSLL;
     node->data = data;
-    node->next = head;
-    head = node;
+    node->next = headsll;
+    headsll = node;
 }
 
 void SingleLinkedList::append_sll(int data) {
-    if (head == NULL) {
+    if (headsll == NULL) {
         SingleLinkedList::push_sll(data);
         return;
     }
     NodeSLL* node = new NodeSLL;
     node->data = data;
     node->next = NULL;
-    NodeSLL* itr = head;
+    NodeSLL* itr = headsll;
     while (itr->next) {
         itr = itr->next;
     }
@@ -44,7 +42,7 @@ void SingleLinkedList::insert_sll(int data, int index) {
     NodeSLL* node = new NodeSLL;
     node->data = data;
     int count = 0;
-    NodeSLL* itr = head;
+    NodeSLL* itr = headsll;
     while (itr) {
         if (count == index - 1) {
             node->next = itr->next;
@@ -61,9 +59,9 @@ void SingleLinkedList::remove_sll(int index) {
         cout << "Invalid Index!" << endl;
         return;
     }
-    NodeSLL* itr = head;
+    NodeSLL* itr = headsll;
     if (index == 0) {
-        head = head->next;
+        headsll = headsll->next;
         delete(itr);
         return;
     }
@@ -81,7 +79,7 @@ void SingleLinkedList::remove_sll(int index) {
 }
 
 int SingleLinkedList::get_length_sll() {
-    NodeSLL* itr = head;
+    NodeSLL* itr = headsll;
     int count = 0;
     while (itr) {
         count++;
@@ -91,11 +89,11 @@ int SingleLinkedList::get_length_sll() {
 }
 
 void SingleLinkedList::display_sll() {
-    if (head == NULL) {
+    if (headsll == NULL) {
         cout << "The Single Linked List is empty!" << endl;
         return;
     }
-    NodeSLL* itr = head;
+    NodeSLL* itr = headsll;
     string sllstr;
     while (itr) {
         sllstr += to_string(itr->data);
@@ -104,4 +102,126 @@ void SingleLinkedList::display_sll() {
         itr = itr->next;
     }
     cout << sllstr << endl;
+}
+
+
+DoublyLinkedList::DoublyLinkedList() : headdll{NULL} {}
+
+void DoublyLinkedList::push_dll(int data) {
+    NodeDLL* node = new NodeDLL;
+    node->data = data;
+    node->next = headdll;
+    node->prev = NULL;
+    if (headdll != NULL)
+        headdll->prev = node;
+    headdll = node;
+}
+
+void DoublyLinkedList::append_dll(int data) {
+    if (headdll == NULL) {
+        push_dll(data);
+        return;
+    }
+    NodeDLL* node = new NodeDLL;
+    node->data = data;
+    node->next = NULL;
+    NodeDLL* itr = headdll;
+    while (itr->next) {
+        itr = itr->next;
+    }
+    itr->next = node;
+    node->prev = itr;
+}
+
+void DoublyLinkedList::insert_dll(int data, int index) {
+    if ((index < 0) || (index > DoublyLinkedList::get_length_dll())) {
+        cout << "Invalid Index!!" << endl;
+        return;
+    }
+    NodeDLL* node = new NodeDLL;
+    node->data = data;
+    NodeDLL* itr = headdll;
+    int count = 0;
+    while (itr) {
+        if (count == index - 1) {
+            node->next = itr->next;
+            node->prev = itr;
+            itr->next->prev = node;
+            itr->next = node;
+            break;
+        }
+        itr = itr->next;
+        count++;
+    }
+}
+
+void DoublyLinkedList::remove_dll(int index) {
+    if ((index < 0) || (index > DoublyLinkedList::get_length_dll())) {
+        cout << "Invalid Index!" << endl;
+        return;
+    }
+    NodeDLL* itr = headdll;
+    if (index == 0) {
+        headdll = headdll->next;
+        headdll->prev = NULL;
+        delete(itr);
+        return;
+    }
+    int count = 0;
+    while (itr) {
+        if (count == index - 1) {
+            NodeDLL* node = itr->next;
+            itr->next = itr->next->next;
+            itr->next->prev = itr;
+            delete(node);
+            break;
+        }
+        itr = itr->next;
+        count++;
+    }
+}
+
+int DoublyLinkedList::get_length_dll() {
+    NodeDLL* itr = headdll;
+    int count = 0;
+    while (itr) {
+        count++;
+        itr = itr->next;
+    }
+    return count;
+}
+
+void DoublyLinkedList::display_dll() {
+    if (headdll == NULL) {
+        cout << "The Doubly Linked List is empty!" << endl;
+        return;
+    }
+    NodeDLL* itr = headdll;
+    string dllstr;
+    while (itr) {
+        dllstr += to_string(itr->data);
+        if (itr->next)
+            dllstr += "-->";
+        itr = itr->next;
+    }
+    cout << dllstr << endl;
+}
+
+void DoublyLinkedList::display_rev_dll() {
+    if (headdll == NULL) {
+        cout << "The Doubly Linked List is empty!" << endl;
+        return;
+    }
+    NodeDLL* itr = headdll;
+    string rdllstr;
+    while (itr->next) {
+        itr = itr->next;
+    }
+    while (itr) {
+        rdllstr += to_string(itr->data);
+        if (itr->prev)
+            rdllstr += "<--";
+        itr = itr->prev;
+    }
+    cout << rdllstr << endl;
 }
