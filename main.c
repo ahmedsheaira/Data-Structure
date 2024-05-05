@@ -7,6 +7,7 @@
 
 #include "LinkedList/include/linked_list.h"
 #include "Queue/include/queue.h"
+#include "Stack/include/stack.h"
 
 int main() {
     printf("This is Single Linked List Demo!!\n");
@@ -71,6 +72,33 @@ int main() {
     printf("The length of the Queue: %d\n", get_length_queue(q));
     printf("The head of the Queue: %d\n", peek_queue(q));
 
+    printf("-----------------------------------------------------------\n");
+    printf("This is Stack based on Linked List demo!\n");
+    struct Stack* s = (struct Stack*)malloc(sizeof(struct Stack));
+    s->top = NULL;
+    push_stack(s, 14);
+    push_stack(s, 4);
+    display_stack(s);
+    printf("The top element of the Stack: %d\n", peek_stack(s));
+    printf("The length of the Stack: %d\n", get_length_stack(s));
+    push_stack(s, 25);
+    push_stack(s, 40);
+    display_stack(s);
+    printf("The top element of the Stack: %d\n", peek_stack(s));
+    printf("The length of the Stack: %d\n", get_length_stack(s));
+    pop_stack(s);
+    display_stack(s);
+    printf("The top element of the Stack: %d\n", peek_stack(s));
+    printf("The length of the Stack: %d\n", get_length_stack(s));
+    pop_stack(s);
+    display_stack(s);
+    printf("The top element of the Stack: %d\n", peek_stack(s));
+    printf("The length of the Stack: %d\n", get_length_stack(s));
+    pop_stack(s);
+    display_stack(s);
+    printf("The top element of the Stack: %d\n", peek_stack(s));
+    printf("The length of the Stack: %d\n", get_length_stack(s));
+    
     return 0;
 
 }
