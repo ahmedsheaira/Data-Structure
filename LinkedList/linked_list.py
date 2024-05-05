@@ -130,7 +130,6 @@ class DoublyLinkedList:
             itr = itr.next
             count += 1
 
-
     def remove_dll(self, index):
         if (index < 0) or (index > self.get_length_dll()):
             raise Exception("Invalid Index")
@@ -210,29 +209,3 @@ if __name__ == '__main__':
     sll.remove_sll(4)
     sll.display_sll()
     print(f"The length of the Single Linked List is {sll.get_length_sll()}\n")
-    print("-----------------------------------------------------------------")
-    dll = DoublyLinkedList()
-    dll.append_dll(4)
-    dll.display_dll()
-    print(f"The length of the Doubly Linked List is {dll.get_length_dll()}\n")
-    dll.push_dll(10)
-    dll.push_dll(20)
-    dll.display_dll()
-    print(f"The length of the Doubly Linked List is {dll.get_length_dll()}\n")
-    dll.append_dll(43)
-    dll.append_dll(28)
-    dll.display_dll()
-    print(f"The length of the Doubly Linked List is {dll.get_length_dll()}\n")
-    dll.insert_dll(6, 3)
-    dll.display_dll()
-    print(f"The length of the Doubly Linked List is {dll.get_length_dll()}\n")
-    dll.remove_dll(3)
-    dll.display_dll()
-    print(f"The length of the Doubly Linked List is {dll.get_length_dll()}\n")
-    dll.insert_dll(16, 5)
-    dll.display_dll()
-    print(f"The length of the Doubly Linked List is {dll.get_length_dll()}\n")
-    dll.remove_dll(4)
-    dll.display_dll()
-    print(f"The length of the Doubly Linked List is {dll.get_length_dll()}\n")
-    dll.display_rev_dll()
