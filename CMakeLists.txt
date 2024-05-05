@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 project(DataStructure VERSION 1.0)
 
-set(SRC_FILES
+set(SRC_FILES_CXX
     main.cpp
     Array/array.cpp
     LinkedList/linked_list.cpp
@@ -13,6 +13,16 @@ set(SRC_FILES
     Stack/stack.cpp
     )
 
-add_executable(datastructure ${SRC_FILES})
+set(SRC_FILES_C
+    main.c
+    LinkedList/linked_list.c
+    Queue/queue.c
+    Stack/stack.c
+    )
 
-target_include_directories(datastructure PUBLIC Array/include LinkedList/include Queue/include Stack/include)
+add_executable(datastructure_cpp ${SRC_FILES_CXX})
+
+add_executable(datastructure_c ${SRC_FILES_C})
+
+target_include_directories(datastructure_cpp PUBLIC Array/include LinkedList/include Queue/include Stack/include)
+target_include_directories(datastructure_c PUBLIC Array/include LinkedList/include Queue/include Stack/include)
