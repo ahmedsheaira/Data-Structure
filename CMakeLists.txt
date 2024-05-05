@@ -17,16 +17,17 @@ set(SRC_FILES_C
     Stack/stack.c)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/LinkedList)
+add_subdirectory(${CMAKE_SOURCE_DIR}/Array)
 
 
 add_executable(datastructure_cpp ${SRC_FILES_CXX})
 
 add_executable(datastructure_c ${SRC_FILES_C})
 
-target_include_directories(datastructure_cpp PUBLIC Array/include/ Queue/include/ Stack/include/)
+target_include_directories(datastructure_cpp PUBLIC Queue/include/ Stack/include/)
 
-target_link_libraries(datastructure_cpp PUBLIC linked_list_cpp)
+target_link_libraries(datastructure_cpp PUBLIC linked_list_cpp array_cpp)
 
-target_include_directories(datastructure_c PUBLIC Array/include/ Queue/include/ Stack/include/)
+target_include_directories(datastructure_c PUBLIC Queue/include/ Stack/include/)
 
 target_link_libraries(datastructure_c PUBLIC linked_list_c)
