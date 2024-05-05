@@ -6,6 +6,7 @@
  */
 
 #include "LinkedList/include/linked_list.h"
+#include "Queue/include/queue.h"
 
 int main() {
     printf("This is Single Linked List Demo!!\n");
@@ -54,4 +55,22 @@ int main() {
     display_dll(headdll);
     printf("The Length of the Doubly Linked List: %d\n", get_length_dll(headdll));
     display_rev_dll(headdll);
+
+    printf("-----------------------------------------------------------\n");
+    printf("This is Queue based on Linked List demo!\n");
+    struct Queue* q = (struct Queue*)malloc(sizeof(struct Queue));
+    q->head = q->tail = NULL;
+    enqueue(10, q);
+    enqueue(30, q);
+    enqueue(3, q);
+    display_queue(q);
+    printf("The length of the Queue: %d\n", get_length_queue(q));
+    printf("The head of the Queue: %d\n", peek_queue(q));
+    dequeue(q);
+    display_queue(q);
+    printf("The length of the Queue: %d\n", get_length_queue(q));
+    printf("The head of the Queue: %d\n", peek_queue(q));
+
+    return 0;
+
 }
