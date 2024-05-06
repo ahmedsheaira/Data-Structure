@@ -6,7 +6,7 @@ add_library(stack_cpp
             stack.cpp
             include/stack.hpp)
 
-add_library(stack.c
+add_library(stack_c
             stack.c
             include/stack.h)
 
