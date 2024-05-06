@@ -5,10 +5,10 @@
  * Version      : 1.0
  */
 
-#include "Array/include/array.hpp"
-#include "LinkedList/include/linked_list.hpp"
-#include "Queue/include/queue.hpp"
-#include "Stack/include/stack.hpp"
+#include "array.hpp"
+#include "linked_list.hpp"
+#include "queue.hpp"
+#include "stack.hpp"
 
 int main() {
     cout << "This is Array ADT demo!!" << endl;
