@@ -36,3 +36,10 @@ add_custom_target(run_linked_list_py
     DEPENDS ${CMAKE_SOURCE_DIR}/LinkedList/linked_list.py
     COMMENT "Running Linked List Python File"
 )
+
+# Add custom target to execute queue.py
+add_custom_target(run_queue_py
+    COMMAND ${CMAKE_COMMAND} -E env PYTHONPATH=${CMAKE_BINARY_DIR} python ${CMAKE_SOURCE_DIR}/Queue/queue.py
+    DEPENDS ${CMAKE_SOURCE_DIR}/Queue/queue.py
+    COMMENT "Running Queue based on Linked List Python File"
+)
