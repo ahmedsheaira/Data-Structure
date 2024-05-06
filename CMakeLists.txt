@@ -43,3 +43,10 @@ add_custom_target(run_queue_py
     DEPENDS ${CMAKE_SOURCE_DIR}/Queue/queue.py
     COMMENT "Running Queue based on Linked List Python File"
 )
+
+# Add custom target to execute stack.py
+add_custom_target(run_stack_py
+    COMMAND ${CMAKE_COMMAND} -E env PYTHONPATH=${CMAKE_BINARY_DIR} python ${CMAKE_SOURCE_DIR}/Stack/stack.py
+    DEPENDS ${CMAKE_SOURCE_DIR}/Stack/stack.py
+    COMMENT "Running Stack based on Linked List Python File"
+)
